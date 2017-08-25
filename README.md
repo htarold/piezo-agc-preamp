@@ -45,6 +45,22 @@ reduce the AGC attack time constant, be careful not to reduce R16
 too much, as this causes instability.  The AGC maintains the output
 at around 1Vp-p.
 
+## Operation
+AGC voltage biases Q1.  Without a signal, AGC voltage is close
+to Vcc, and Q1 amplifies (modestly).  As AGC voltage decreases,
+Q1 gets pushed into cutoff.  This kind of reverse AGC used to be
+quite common.
+
+The signal then passes to the first op amp which is configured as
+a multi feedback band pass filter (2nd order), then to the second
+op amp (the gain stage).  This also implements band pass filtering
+but it isn't particularly good at it.  This output (at T8) will
+normally be connected to T10.
+
+If the output from the second op amp is too high, it turns on Q2
+which lowers the AGC voltage.  In this way, the AGC feedback
+loop is closed.
+
 ## Modifying the preamp
 The component values shown in the schematic are for a preamp
 with band pass filter centre frequency at 36kHz and Vcc of 5V.
