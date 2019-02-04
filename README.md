@@ -1,9 +1,12 @@
-
 ## Description
 This is a preamp board for capacitive transducers.  It
 implements a simple AGC with a BJT.  I use this as a hydrophone
 preamp, and I'm generally pleased with how it works.  You could
 use it in a bat detector if you want.
+
+_NOTE:_ This circuit is not suitable for audio use, as the self
+noise is higher than expected for reasons I have not yet
+discovered.  Also, the filter component values would need to be changed.
 
 ## Parking sensors
 This preamp was originally developed for car
